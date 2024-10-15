@@ -13,5 +13,4 @@ func _on_options_pressed() -> void:
 
 func _on_exit_pressed() -> void:
 	print('Goodbye')
-	#get_tree().quit()
-	pass # Replace with function body.
+	get_tree().quit()
