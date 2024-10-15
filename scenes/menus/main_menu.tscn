@@ -1,4 +1,6 @@
-[gd_scene format=3 uid="uid://vokjflj7j005"]
+[gd_scene load_steps=2 format=3 uid="uid://vokjflj7j005"]
+
+[ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_8oetc"]
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -7,6 +9,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_8oetc")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 0
@@ -48,3 +51,7 @@ text = "Options"
 layout_mode = 2
 size_flags_vertical = 4
 text = "Exit"
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
