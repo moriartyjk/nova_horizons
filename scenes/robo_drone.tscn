@@ -23,3 +23,5 @@ shape = SubResource("CapsuleShape3D_g8you")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.731932, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Neck"]
+
+[connection signal="ready" from="CharacterBody3D" to="CharacterBody3D" method="_on_ready"]
