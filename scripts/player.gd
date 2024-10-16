@@ -8,6 +8,14 @@ const JUMP_VELOCITY = 4.5
 @onready var neck: Node3D = $Neck
 @onready var camera: Camera3D = $Neck/Camera3D
 
+
+
+func _on_ready() -> void:
+	# integrate mouse into game on scene ready
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
+
+
 func _unhandled_input(event: InputEvent) -> void:
 	
 	# Hiding mouse on any keypress, unhiding mouse on escpae
