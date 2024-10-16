@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bs2k6brr1usjb"]
+
+[ext_resource type="PackedScene" path="res://scenes/environment.tscn" id="1_nn353"]
+
+[node name="Game" type="Node3D"]
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.0954207, 0.351195, -0.931427, 0.103103, 0.927177, 0.360156, 0.990083, -0.130399, 0.0522627, -14.0321, 6.90853, 3.79163)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.0313207, 0.329698, -0.943567, 0.0105794, 0.943868, 0.330154, 0.999453, -0.020323, 0.0260745, -6.8924, 2.39649, 0)
+
+[node name="Environment" parent="." instance=ExtResource("1_nn353")]
