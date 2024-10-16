@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://dxritfrb7n2np"]
+[gd_scene load_steps=5 format=3 uid="uid://n1rgc4ij8che"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p5l2k"]
 size = Vector3(14, 0.25, 18)
@@ -11,6 +11,7 @@ size = Vector3(13.885, 5, 1)
 [sub_resource type="BoxMesh" id="BoxMesh_rrq3x"]
 
 [node name="Environment" type="Node3D"]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
 
 [node name="Floor" type="StaticBody3D" parent="."]
 
