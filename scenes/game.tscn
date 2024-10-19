@@ -31,4 +31,3 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 [node name="RoboDrone" parent="." instance=ExtResource("2_cje2b")]
 
 [node name="Timer" parent="." instance=ExtResource("3_ou05k")]
-mouse_filter = 2

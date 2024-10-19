@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://d1m18lh8uhi7k"]
+[gd_scene load_steps=3 format=3 uid="uid://d1m18lh8uhi7k"]
 
 [ext_resource type="Script" path="res://scripts/countdown.gd" id="1_oc4hp"]
+[ext_resource type="Script" path="res://scripts/timer_restart.gd" id="2_8qb7n"]
 
 [node name="Timer" type="Control"]
 layout_mode = 3
@@ -22,5 +23,8 @@ text = "00:00"
 script = ExtResource("1_oc4hp")
 
 [node name="Countdown" type="Timer" parent="CountdownText"]
-wait_time = 3600.0
+wait_time = 10.0
 autostart = true
+script = ExtResource("2_8qb7n")
+
+[connection signal="timeout" from="CountdownText/Countdown" to="CountdownText" method="_on_countdown_timeout"]
