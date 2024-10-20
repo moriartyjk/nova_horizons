@@ -1,6 +1,8 @@
 extends CollisionObject3D
 class_name Interactable
 
+signal interacted(body)
+
 @export var prompt_message = "Interact"
 @export var prompt_input = "interact"
 
@@ -15,4 +17,5 @@ func get_prompt():
 	return prompt_message + "\n[" + key_name + "]"
 
 func interact(body):
-	print(body.name, " interacted with ", name)
+	interacted.emit(body)
+	#print(body.name, " interacted with ", name)
