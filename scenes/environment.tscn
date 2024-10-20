@@ -1,14 +1,21 @@
-[gd_scene load_steps=5 format=3 uid="uid://n1rgc4ij8che"]
+[gd_scene load_steps=7 format=3 uid="uid://n1rgc4ij8che"]
+
+[ext_resource type="Material" uid="uid://dc7d3ir8331fr" path="res://materials/wall_material.tres" id="1_bmhdu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p5l2k"]
 size = Vector3(14, 0.25, 18)
 
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rvrhs"]
+albedo_color = Color(0.0666667, 0.0666667, 0.121569, 1)
+
 [sub_resource type="BoxMesh" id="BoxMesh_gpeu5"]
+material = SubResource("StandardMaterial3D_rvrhs")
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_q6234"]
 size = Vector3(13.885, 5, 1)
 
 [sub_resource type="BoxMesh" id="BoxMesh_rrq3x"]
+material = ExtResource("1_bmhdu")
 
 [node name="Environment" type="Node3D"]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
