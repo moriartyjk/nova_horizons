@@ -21,7 +21,7 @@ func _unhandled_input(event: InputEvent) -> void:
 		if event is InputEventMouseMotion:
 			neck.rotate_y(-event.relative.x * 0.01) #neck left if mouse left
 			camera.rotate_x(-event.relative.y * 0.01) # camera up if mouse up
-			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-30), deg_to_rad(60)) # limit how far up and down
+			#camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-30), deg_to_rad(60)) # limit how far up and down
 
 
 func _physics_process(delta: float) -> void:
