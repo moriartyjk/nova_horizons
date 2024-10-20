@@ -1,7 +1,9 @@
 extends RayCast3D
 
+@onready var prompt: Label = $Prompt
 
 func _physics_process(delta: float) -> void:
+	prompt.text = ""
 	
 	if is_colliding():
-		print("Detecting Something")
+		prompt.text = "something else..."
