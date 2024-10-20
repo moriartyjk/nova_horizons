@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://ciajsvy2jp62v"]
+[gd_scene load_steps=6 format=3 uid="uid://ciajsvy2jp62v"]
 
 [ext_resource type="Script" path="res://scripts/player.gd" id="1_1lj84"]
+[ext_resource type="PackedScene" uid="uid://cbjs0beewawt7" path="res://interact/interact_ray.tscn" id="2_f1aqj"]
 [ext_resource type="PackedScene" uid="uid://d4soujoi2yl6" path="res://scenes/ui_elements/crosshair.tscn" id="2_yxtwe"]
 
 [sub_resource type="CapsuleMesh" id="CapsuleMesh_d82t7"]
@@ -24,5 +25,7 @@ shape = SubResource("CapsuleShape3D_g8you")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.731932, 0)
 
 [node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Neck"]
+
+[node name="InteractRay" parent="CharacterBody3D/Neck" instance=ExtResource("2_f1aqj")]
 
 [node name="Crosshair" parent="." instance=ExtResource("2_yxtwe")]
