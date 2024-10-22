@@ -13,6 +13,7 @@ func _process(delta: float) -> void:
 func pauseMenu():
 	if paused:
 		pause_menu.hide()
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED #ensure mouse is recaptured
 		Engine.time_scale = 1
 	else:
 		pause_menu.show()
