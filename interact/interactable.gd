@@ -1,5 +1,5 @@
 extends CollisionObject3D
-class_name Interactable
+class_name Interactable 
 
 signal interacted(body)
 
