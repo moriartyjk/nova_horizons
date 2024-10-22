@@ -3,6 +3,9 @@ extends Node3D
 @onready var pause_menu: Control = $UI/PauseMenu
 var paused = false
 
+func _ready() -> void:
+	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
 	
@@ -17,6 +20,7 @@ func pauseMenu():
 		Engine.time_scale = 1
 	else:
 		pause_menu.show()
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 		Engine.time_scale = 0
 	
 	paused = !paused

@@ -11,17 +11,17 @@ const JUMP_VELOCITY = 4.5
 func _unhandled_input(event: InputEvent) -> void:
 	
 	# Hiding mouse on any keypress, unhiding mouse on escpae
-	if event is InputEventMouseButton:
-		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-	elif event.is_action_pressed("ui_cancel"): # pressing escape
-		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	#if event is InputEventMouseButton:
+		#Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+	#elif event.is_action_pressed("ui_cancel"): # pressing escape
+		#Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	
 	# set movement of neck and camera
 	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
 		if event is InputEventMouseMotion:
 			neck.rotate_y(-event.relative.x * 0.01) #neck left if mouse left
 			camera.rotate_x(-event.relative.y * 0.01) # camera up if mouse up
-			#camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-30), deg_to_rad(60)) # limit how far up and down
+			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-30), deg_to_rad(60)) # limit how far up and down
 
 
 func _physics_process(delta: float) -> void:
