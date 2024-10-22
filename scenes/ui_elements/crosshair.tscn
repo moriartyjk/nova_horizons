@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://d4soujoi2yl6"]
 
-[ext_resource type="Script" path="res://scripts/reticle.gd" id="1_6l7pj"]
+[ext_resource type="Script" path="res://scripts/user_interface/reticle.gd" id="1_6l7pj"]
 
 [node name="Crosshair" type="Control"]
 layout_mode = 3
