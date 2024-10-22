@@ -1,5 +1,6 @@
-[gd_scene load_steps=7 format=3 uid="uid://n1rgc4ij8che"]
+[gd_scene load_steps=8 format=3 uid="uid://n1rgc4ij8che"]
 
+[ext_resource type="Script" path="res://interact/interactable.gd" id="1_4bsyr"]
 [ext_resource type="Material" uid="uid://dc7d3ir8331fr" path="res://materials/wall_material.tres" id="1_bmhdu"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_p5l2k"]
@@ -42,6 +43,9 @@ mesh = SubResource("BoxMesh_rrq3x")
 
 [node name="Wall2" type="StaticBody3D" parent="."]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -0.00914288)
+script = ExtResource("1_4bsyr")
+prompt_message = "Better Wall"
+prompt_input = "open"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall2"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.45, 8.504)
@@ -53,6 +57,9 @@ mesh = SubResource("BoxMesh_rrq3x")
 
 [node name="Wall3" type="StaticBody3D" parent="."]
 transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -2.03281, 0, -0.00914288)
+script = ExtResource("1_4bsyr")
+prompt_message = "A Wall"
+prompt_input = "inspect"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall3"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.45, 8.504)
