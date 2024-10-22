@@ -32,8 +32,6 @@ transform = Transform3D(13.858, 0, 0, 0, 0.264, 0, 0, 0, 18, 0, 0, 0)
 mesh = SubResource("BoxMesh_gpeu5")
 
 [node name="Wall" type="StaticBody3D" parent="."]
-script = ExtResource("1_4bsyr")
-prompt_message = "The Best Wall"
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Wall"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.45, 8.504)
