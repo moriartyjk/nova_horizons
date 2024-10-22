@@ -1,9 +1,11 @@
-[gd_scene load_steps=8 format=3 uid="uid://dyoh6fxxpe67a"]
+[gd_scene load_steps=10 format=3 uid="uid://dyoh6fxxpe67a"]
 
+[ext_resource type="Script" path="res://scripts/game.gd" id="1_01hu1"]
 [ext_resource type="PackedScene" uid="uid://n1rgc4ij8che" path="res://scenes/environment.tscn" id="1_nn353"]
 [ext_resource type="PackedScene" uid="uid://ciajsvy2jp62v" path="res://scenes/robo_drone.tscn" id="2_cje2b"]
 [ext_resource type="PackedScene" uid="uid://d1m18lh8uhi7k" path="res://scenes/ui_elements/timer.tscn" id="3_ou05k"]
 [ext_resource type="PackedScene" uid="uid://1xj4qq0op506" path="res://scenes/button.tscn" id="4_awb0w"]
+[ext_resource type="PackedScene" uid="uid://dd0omf2ya3rul" path="res://scenes/menus/pause_menu.tscn" id="6_jc474"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u5gor"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -19,6 +21,7 @@ tonemap_mode = 2
 glow_enabled = true
 
 [node name="Game" type="Node3D"]
+script = ExtResource("1_01hu1")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_ipgco")
@@ -32,7 +35,12 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 [node name="RoboDrone" parent="." instance=ExtResource("2_cje2b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14889, 0)
 
-[node name="Timer" parent="." instance=ExtResource("3_ou05k")]
-
 [node name="Button" parent="." instance=ExtResource("4_awb0w")]
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.9489, 7.92593)
+
+[node name="UI" type="Node" parent="."]
+
+[node name="Timer" parent="UI" instance=ExtResource("3_ou05k")]
+
+[node name="PauseMenu" parent="UI" instance=ExtResource("6_jc474")]
+visible = false
