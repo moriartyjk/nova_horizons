@@ -18,7 +18,7 @@ offset_right = 130.0
 offset_bottom = 63.0
 theme_override_colors/font_color = Color(0, 0.454902, 1, 1)
 theme_override_font_sizes/font_size = 45
-text = "00:00"
+text = "60:00"
 script = ExtResource("1_oc4hp")
 
 [node name="Countdown" type="Timer" parent="CountdownText"]
