@@ -1,23 +1,27 @@
-extends Label
+extends Control
 
-@onready var countdown: Timer = $Countdown
+@onready var timer_label: Label = $CountdownText
+@onready var countdown: Timer = $CountdownText/Countdown
 
 var isRunning: bool = false
 
+# Called when the node enters the scene tree for the first time.
+func _ready() -> void:
+	#_start_timer() # test ready function
+	pass
 
-func _process(_delta : float) -> void:
-	#
-	if countdown.is_stopped():
-		_start_timer()
-		
-	if isRunning:
-		text = _format_seconds(countdown.time_left, false)
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+func _process(delta: float) -> void:
 	
+	if isRunning:	
+		timer_label.text = _format_seconds(countdown.time_left, false)
 
+# Starts timer
 func _start_timer() -> void:
 	countdown.start()
 	isRunning = !isRunning
 
+# Formats UI
 func _format_seconds(time : float, use_milliseconds : bool) -> String:
 	var minutes := time / 60
 	var seconds := fmod(time, 60)
@@ -32,4 +36,3 @@ func _format_seconds(time : float, use_milliseconds : bool) -> String:
 
 func _on_countdown_timeout() -> void:
 	get_tree().reload_current_scene()
-	#pass # Replace with function body.
