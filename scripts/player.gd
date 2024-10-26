@@ -1,5 +1,13 @@
 extends CharacterBody3D
 
+@export var thrust_power: float = 20.0
+@export var torque_power: float = 2.0
+@export var dampening: float = 0.95  # Reduces drift
+@export var rotation_dampening: float = 0.92
+
+# Camera sensitivity
+@export var mouse_sensitivity: float = 0.002
+
 
 const SPEED = 5.0
 const JUMP_VELOCITY = 4.5
@@ -8,14 +16,29 @@ const JUMP_VELOCITY = 4.5
 @onready var neck: Node3D = $Neck
 @onready var camera: Camera3D = $Neck/Camera3D
 
-func _unhandled_input(event: InputEvent) -> void:
+func _input(event: InputEvent) -> void:
+	# Handle mouse movement for rotation
+	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+		neck.rotate_y(-event.relative.x * 0.01)
+		camera.rotate_x(-event.relative.y * 0.01)
+		#rotate_object_local(Vector3.UP, -event.relative.x * mouse_sensitivity)
+		#rotate_object_local(Vector3.RIGHT, -event.relative.y * mouse_sensitivity)
+	
+	# Toggle mouse capture
+	if event.is_action_pressed("ui_cancel"):
+		if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
+			Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
+		else:
+			Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)	
 
-	# set movement of neck and camera
-	if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
-		if event is InputEventMouseMotion:
-			neck.rotate_y(-event.relative.x * 0.01) #neck left if mouse left
-			camera.rotate_x(-event.relative.y * 0.01) # camera up if mouse up
-			camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(60)) # limit how far up and down
+#func _unhandled_input(event: InputEvent) -> void:
+#
+	## set movement of neck and camera
+	#if Input.mouse_mode == Input.MOUSE_MODE_CAPTURED:
+		#if event is InputEventMouseMotion:
+			#neck.rotate_y(-event.relative.x * 0.01) #neck left if mouse left
+			#camera.rotate_x(-event.relative.y * 0.01) # camera up if mouse up
+			#camera.rotation.x = clamp(camera.rotation.x, deg_to_rad(-60), deg_to_rad(60)) # limit how far up and down
 
 
 func _physics_process(delta: float) -> void:
