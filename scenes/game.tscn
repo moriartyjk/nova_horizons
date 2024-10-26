@@ -35,12 +35,19 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 [node name="RoboDrone" parent="." instance=ExtResource("2_cje2b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14889, 0)
 
-[node name="Button" parent="." instance=ExtResource("4_awb0w")]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.9489, 7.92593)
-
 [node name="UI" type="Node" parent="."]
 
 [node name="Timer" parent="UI" instance=ExtResource("3_ou05k")]
 
 [node name="PauseMenu" parent="UI" instance=ExtResource("6_jc474")]
 visible = false
+
+[node name="Buttons" type="Node" parent="."]
+
+[node name="TestButton" parent="Buttons" instance=ExtResource("4_awb0w")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.9489, 7.92593)
+prompt_message = "I Do Nothing"
+
+[node name="TimerStart" parent="Buttons" instance=ExtResource("4_awb0w")]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 5.85075, 1.9489, -0.224094)
+prompt_message = "Start Timer"
