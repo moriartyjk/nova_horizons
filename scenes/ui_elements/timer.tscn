@@ -23,6 +23,5 @@ script = ExtResource("1_oc4hp")
 
 [node name="Countdown" type="Timer" parent="CountdownText"]
 wait_time = 3600.0
-autostart = true
 
 [connection signal="timeout" from="CountdownText/Countdown" to="CountdownText" method="_on_countdown_timeout"]

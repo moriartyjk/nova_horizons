@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dyoh6fxxpe67a"]
+[gd_scene load_steps=11 format=3 uid="uid://dyoh6fxxpe67a"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_01hu1"]
 [ext_resource type="PackedScene" uid="uid://n1rgc4ij8che" path="res://scenes/environment.tscn" id="1_nn353"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d1m18lh8uhi7k" path="res://scenes/ui_elements/timer.tscn" id="3_ou05k"]
 [ext_resource type="PackedScene" uid="uid://1xj4qq0op506" path="res://scenes/button.tscn" id="4_awb0w"]
 [ext_resource type="PackedScene" uid="uid://dd0omf2ya3rul" path="res://scenes/menus/pause_menu.tscn" id="6_jc474"]
+[ext_resource type="PackedScene" uid="uid://de6vrd6ankby6" path="res://scenes/start_timer_btn.tscn" id="7_a0ovd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u5gor"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -48,6 +49,6 @@ visible = false
 transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 0, 1.9489, 7.92593)
 prompt_message = "I Do Nothing"
 
-[node name="TimerStart" parent="Buttons" instance=ExtResource("4_awb0w")]
-transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 5.85075, 1.9489, -0.224094)
+[node name="StartTimerButton" parent="Buttons" instance=ExtResource("7_a0ovd")]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 5.75687, 2.27189, 0)
 prompt_message = "Start Timer"
