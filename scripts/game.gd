@@ -24,3 +24,7 @@ func pauseMenu():
 		Engine.time_scale = 0
 	
 	paused = !paused
+
+
+func _on_timer_start_interacted(body: Variant) -> void:
+	pass # Replace with function body.

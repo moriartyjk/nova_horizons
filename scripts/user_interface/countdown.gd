@@ -2,9 +2,22 @@ extends Label
 
 @onready var countdown: Timer = $Countdown
 
+var isRunning: bool = false
+
+
 func _process(_delta : float) -> void:
-	text = _format_seconds(countdown.time_left, false)
+	#
+	if countdown.is_stopped():
+		_start_timer()
+		
+	if isRunning:
+		text = _format_seconds(countdown.time_left, false)
 	
+
+func _start_timer() -> void:
+	countdown.start()
+	isRunning = !isRunning
+
 func _format_seconds(time : float, use_milliseconds : bool) -> String:
 	var minutes := time / 60
 	var seconds := fmod(time, 60)

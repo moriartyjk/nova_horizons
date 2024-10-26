@@ -1,0 +1,25 @@
+[gd_scene load_steps=5 format=3 uid="uid://de6vrd6ankby6"]
+
+[ext_resource type="Script" path="res://scripts/start_timer_btn.gd" id="1_87rh7"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_75sfa"]
+albedo_color = Color(0.368627, 1, 0.376471, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_m88cy"]
+material = SubResource("StandardMaterial3D_75sfa")
+height = 0.5
+
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_58tlj"]
+height = 0.5
+
+[node name="StartTimerButton" type="StaticBody3D"]
+transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 0, 0, 0)
+script = ExtResource("1_87rh7")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_m88cy")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CylinderShape3D_58tlj")
+
+[connection signal="interacted" from="." to="." method="_on_interacted"]
