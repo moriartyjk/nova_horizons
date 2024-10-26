@@ -52,3 +52,5 @@ prompt_message = "I Do Nothing"
 [node name="StartTimerButton" parent="Buttons" instance=ExtResource("7_a0ovd")]
 transform = Transform3D(-4.37114e-08, 1, -4.37114e-08, 0, -4.37114e-08, -1, -1, -4.37114e-08, 1.91069e-15, 5.75687, 2.27189, 0)
 prompt_message = "Start Timer"
+
+[connection signal="interacted" from="Buttons/StartTimerButton" to="UI/Timer" method="_on_start_timer_button_interacted"]

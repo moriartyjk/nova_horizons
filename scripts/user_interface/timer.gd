@@ -36,3 +36,8 @@ func _format_seconds(time : float, use_milliseconds : bool) -> String:
 
 func _on_countdown_timeout() -> void:
 	get_tree().reload_current_scene()
+
+
+func _on_start_timer_button_interacted(body: Variant) -> void:
+	_start_timer()
+	#pass # Replace with function body.
