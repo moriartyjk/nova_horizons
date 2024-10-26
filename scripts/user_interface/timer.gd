@@ -39,5 +39,6 @@ func _on_countdown_timeout() -> void:
 
 
 func _on_start_timer_button_interacted(body: Variant) -> void:
-	_start_timer()
+	if countdown.is_stopped():
+		_start_timer()
 	#pass # Replace with function body.
