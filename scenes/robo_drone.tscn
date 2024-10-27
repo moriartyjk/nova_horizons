@@ -8,24 +8,25 @@
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g8you"]
 
-[node name="RoboDrone" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.826707, 0)
-
-[node name="CharacterBody3D" type="CharacterBody3D" parent="."]
+[node name="RoboDrone" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_1lj84")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="CharacterBody3D"]
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.232685, 0)
 mesh = SubResource("CapsuleMesh_d82t7")
 
-[node name="CollisionShape3D" type="CollisionShape3D" parent="CharacterBody3D"]
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_g8you")
 
-[node name="Neck" type="Node3D" parent="CharacterBody3D"]
+[node name="Neck" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.731932, 0)
 
-[node name="Camera3D" type="Camera3D" parent="CharacterBody3D/Neck"]
+[node name="Camera3D" type="Camera3D" parent="Neck"]
 
-[node name="InteractRay" parent="CharacterBody3D/Neck" instance=ExtResource("2_f1aqj")]
+[node name="InteractRay" parent="Neck" instance=ExtResource("2_f1aqj")]
+
+[node name="RoboDrone" type="Node3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.826707, 0)
 
 [node name="Crosshair" parent="." instance=ExtResource("2_yxtwe")]
