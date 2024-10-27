@@ -1,7 +1,9 @@
-[gd_scene load_steps=4 format=3 uid="uid://caqgxwpw0o4au"]
+[gd_scene load_steps=6 format=3 uid="uid://caqgxwpw0o4au"]
 
-[ext_resource type="Script" path="res://scripts/menu/options.gd" id="1_lv25m"]
+[ext_resource type="Script" path="res://scripts/menu/settings.gd" id="1_22odr"]
 [ext_resource type="Texture2D" uid="uid://cyto54jbu65c5" path="res://assets/textures/NightSkyHDRI002_1K-TONEMAPPED.jpg" id="2_kw0hw"]
+[ext_resource type="SystemFont" uid="uid://bk67ajip613n8" path="res://assets/fonts/btn_impact.tres" id="3_yf8mm"]
+[ext_resource type="PackedScene" uid="uid://btmdgyc774qgm" path="res://scenes/menus/settings_tabs.tscn" id="4_7g0ym"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_extsi"]
 diffuse_texture = ExtResource("2_kw0hw")
@@ -13,7 +15,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_lv25m")
+script = ExtResource("1_22odr")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
@@ -25,104 +27,46 @@ grow_vertical = 2
 texture = SubResource("CanvasTexture_extsi")
 expand_mode = 3
 
-[node name="Header" type="Label" parent="."]
+[node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 10
+anchors_preset = 15
 anchor_right = 1.0
-offset_top = 26.0
-offset_bottom = 49.0
+anchor_bottom = 1.0
 grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Separator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Header" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_yf8mm")
 theme_override_font_sizes/font_size = 40
 text = "Settings"
 horizontal_alignment = 1
 
-[node name="Back" type="Button" parent="."]
-layout_mode = 1
-anchors_preset = 7
-anchor_left = 0.5
-anchor_top = 1.0
-anchor_right = 0.5
-anchor_bottom = 1.0
-offset_left = -82.0
-offset_top = -81.0
-offset_right = 82.0
-offset_bottom = -38.0
-grow_horizontal = 2
-grow_vertical = 0
-theme_override_font_sizes/font_size = 25
-text = "Back to Main"
+[node name="SettingsTabs" parent="MarginContainer/VBoxContainer" instance=ExtResource("4_7g0ym")]
+layout_mode = 2
+size_flags_vertical = 3
 
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 14
-anchor_top = 0.5
-anchor_right = 1.0
-anchor_bottom = 0.5
-offset_top = -43.0
-offset_bottom = 43.0
-grow_horizontal = 2
-grow_vertical = 2
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("3_yf8mm")
+theme_override_font_sizes/font_size = 20
+text = "Back to Menu"
 
-[node name="HSplitContainer" type="HBoxContainer" parent="VBoxContainer"]
+[node name="Separator2" type="Control" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 
-[node name="Label" type="Label" parent="VBoxContainer/HSplitContainer"]
-layout_mode = 2
-size_flags_horizontal = 10
-text = "Fullscreen"
-
-[node name="CheckButton" type="CheckButton" parent="VBoxContainer/HSplitContainer"]
-layout_mode = 2
-size_flags_horizontal = 2
-
-[node name="Resolution" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-
-[node name="Label" type="Label" parent="VBoxContainer/Resolution"]
-layout_mode = 2
-size_flags_horizontal = 10
-text = "Resolution"
-
-[node name="CheckButton" type="MenuButton" parent="VBoxContainer/Resolution"]
-layout_mode = 2
-size_flags_horizontal = 2
-text = "1920x1080"
-switch_on_hover = true
-item_count = 4
-popup/item_0/text = "2560x1140"
-popup/item_0/checkable = 2
-popup/item_1/text = "1920x1080"
-popup/item_1/checkable = 2
-popup/item_1/id = 1
-popup/item_2/text = "1280x720"
-popup/item_2/checkable = 2
-popup/item_2/id = 2
-popup/item_3/text = "800x600"
-popup/item_3/checkable = 2
-popup/item_3/id = 3
-
-[node name="SFX" type="HBoxContainer" parent="VBoxContainer"]
-layout_mode = 2
-
-[node name="SFXLabel" type="Label" parent="VBoxContainer/SFX"]
-layout_mode = 2
-size_flags_horizontal = 10
-text = "SFX"
-
-[node name="0" type="Label" parent="VBoxContainer/SFX"]
-layout_mode = 2
-size_flags_horizontal = 10
-text = "0
-"
-
-[node name="CheckButton" type="HSlider" parent="VBoxContainer/SFX"]
-layout_mode = 2
-size_flags_horizontal = 3
-
-[node name="100" type="Label" parent="VBoxContainer/SFX"]
-layout_mode = 2
-size_flags_horizontal = 3
-text = "100
-"
-
-[connection signal="pressed" from="Back" to="." method="_on_back_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]
