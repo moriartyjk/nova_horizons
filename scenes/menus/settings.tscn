@@ -1,0 +1,72 @@
+[gd_scene load_steps=6 format=3 uid="uid://caqgxwpw0o4au"]
+
+[ext_resource type="Script" path="res://scripts/menu/settings.gd" id="1_22odr"]
+[ext_resource type="Texture2D" uid="uid://cyto54jbu65c5" path="res://assets/textures/NightSkyHDRI002_1K-TONEMAPPED.jpg" id="2_kw0hw"]
+[ext_resource type="SystemFont" uid="uid://bk67ajip613n8" path="res://assets/fonts/btn_impact.tres" id="3_yf8mm"]
+[ext_resource type="PackedScene" uid="uid://btmdgyc774qgm" path="res://scenes/menus/settings_tabs.tscn" id="4_7g0ym"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_extsi"]
+diffuse_texture = ExtResource("2_kw0hw")
+
+[node name="Settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_22odr")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = SubResource("CanvasTexture_extsi")
+expand_mode = 3
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 30
+
+[node name="Separator" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[node name="Header" type="Label" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("3_yf8mm")
+theme_override_font_sizes/font_size = 40
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="SettingsTabs" parent="MarginContainer/VBoxContainer" instance=ExtResource("4_7g0ym")]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Back" type="Button" parent="MarginContainer/VBoxContainer"]
+custom_minimum_size = Vector2(150, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_fonts/font = ExtResource("3_yf8mm")
+theme_override_font_sizes/font_size = 20
+text = "Back to Menu"
+
+[node name="Separator2" type="Control" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Back" to="." method="_on_back_pressed"]

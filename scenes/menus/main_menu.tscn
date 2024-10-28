@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://vokjflj7j005"]
+[gd_scene load_steps=5 format=3 uid="uid://vokjflj7j005"]
 
 [ext_resource type="Script" path="res://scripts/menu/main_menu.gd" id="1_8oetc"]
+[ext_resource type="Texture2D" uid="uid://cyto54jbu65c5" path="res://assets/textures/NightSkyHDRI002_1K-TONEMAPPED.jpg" id="2_shirt"]
+[ext_resource type="SystemFont" uid="uid://bk67ajip613n8" path="res://assets/fonts/btn_impact.tres" id="3_gkkhb"]
+
+[sub_resource type="SystemFont" id="SystemFont_ao33k"]
+font_names = PackedStringArray("Impact")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -11,50 +16,109 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_8oetc")
 
-[node name="Background" type="ColorRect" parent="."]
+[node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(28.8, 16.12)
-color = Color(0.0901961, 0.0823529, 0.231373, 1)
+texture = ExtResource("2_shirt")
+flip_h = true
+flip_v = true
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -4.0
-offset_top = -4.0
-offset_right = 4.0
-offset_bottom = 4.0
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+theme_override_constants/margin_left = 12
+theme_override_constants/margin_top = 12
+theme_override_constants/margin_right = 12
+theme_override_constants/margin_bottom = 12
 
-[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+[node name="VBoxTitle" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 60
+
+[node name="Separator" type="Control" parent="MarginContainer/VBoxTitle"]
+layout_mode = 2
+
+[node name="GameTitle" type="Label" parent="MarginContainer/VBoxTitle"]
+layout_mode = 2
+theme_override_colors/font_color = Color(0.667552, 0.292264, 0.999986, 1)
+theme_override_colors/font_shadow_color = Color(0.370364, 0.370364, 0.370364, 1)
+theme_override_colors/font_outline_color = Color(0.991164, 0.991164, 0.991164, 1)
+theme_override_constants/shadow_offset_x = 5
+theme_override_constants/shadow_offset_y = 5
+theme_override_constants/outline_size = 6
+theme_override_constants/shadow_outline_size = 0
+theme_override_fonts/font = SubResource("SystemFont_ao33k")
+theme_override_font_sizes/font_size = 40
+text = "Journey's End: Return of Nova Horizons"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="HBoxButtons" type="HBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="VBoxButtons" type="VBoxContainer" parent="MarginContainer/HBoxButtons"]
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 4
+theme_override_constants/separation = 18
+alignment = 1
 
-[node name="Play" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Separator2" type="Control" parent="MarginContainer/HBoxButtons/VBoxButtons"]
+layout_mode = 2
+
+[node name="Play" type="Button" parent="MarginContainer/HBoxButtons/VBoxButtons"]
+custom_minimum_size = Vector2(150, 0)
 layout_mode = 2
 size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.133333, 0.6, 0.6, 1)
+theme_override_fonts/font = ExtResource("3_gkkhb")
+theme_override_font_sizes/font_size = 30
 text = "Play"
 
-[node name="Options" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Separator3" type="Control" parent="MarginContainer/HBoxButtons/VBoxButtons"]
 layout_mode = 2
-size_flags_vertical = 4
-text = "Options"
 
-[node name="Exit" type="Button" parent="MarginContainer/VBoxContainer"]
+[node name="Settings" type="Button" parent="MarginContainer/HBoxButtons/VBoxButtons"]
 layout_mode = 2
 size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.133333, 0.6, 0.6, 1)
+theme_override_fonts/font = ExtResource("3_gkkhb")
+theme_override_font_sizes/font_size = 30
+text = "Settings
+"
+
+[node name="Separator4" type="Control" parent="MarginContainer/HBoxButtons/VBoxButtons"]
+layout_mode = 2
+
+[node name="Controls" type="Button" parent="MarginContainer/HBoxButtons/VBoxButtons"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.133333, 0.6, 0.6, 1)
+theme_override_fonts/font = ExtResource("3_gkkhb")
+theme_override_font_sizes/font_size = 30
+text = "Controls"
+
+[node name="Separator5" type="Control" parent="MarginContainer/HBoxButtons/VBoxButtons"]
+layout_mode = 2
+
+[node name="Exit" type="Button" parent="MarginContainer/HBoxButtons/VBoxButtons"]
+layout_mode = 2
+size_flags_vertical = 4
+theme_override_colors/font_color = Color(0.133333, 0.6, 0.6, 1)
+theme_override_fonts/font = ExtResource("3_gkkhb")
+theme_override_font_sizes/font_size = 30
 text = "Exit"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Play" to="." method="_on_play_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Options" to="." method="_on_options_pressed"]
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxButtons/VBoxButtons/Play" to="." method="_on_play_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxButtons/VBoxButtons/Settings" to="." method="_on_settings_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxButtons/VBoxButtons/Controls" to="." method="_on_controls_pressed"]
+[connection signal="pressed" from="MarginContainer/HBoxButtons/VBoxButtons/Exit" to="." method="_on_exit_pressed"]
