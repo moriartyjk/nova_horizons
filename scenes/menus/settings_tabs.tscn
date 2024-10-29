@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://btmdgyc774qgm"]
+[gd_scene load_steps=3 format=3 uid="uid://btmdgyc774qgm"]
 
 [ext_resource type="PackedScene" uid="uid://cdlr211mwm34n" path="res://scenes/ui_elements/window_mode_btn.tscn" id="1_xlieq"]
+[ext_resource type="PackedScene" uid="uid://cycmyhemh8dvw" path="res://scenes/ui_elements/resolution_mode_btn.tscn" id="2_ytfqw"]
 
 [node name="SettingsTabs" type="Control"]
 layout_mode = 3
@@ -66,14 +67,15 @@ theme_override_constants/margin_top = 24
 theme_override_constants/margin_right = 24
 theme_override_constants/margin_bottom = 24
 
-[node name="ScrollContainer" type="ScrollContainer" parent="TabContainer/Video/MarginContainer"]
+[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Video/MarginContainer"]
 layout_mode = 2
+theme_override_constants/separation = 100
 
-[node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Video/MarginContainer/ScrollContainer"]
+[node name="WindowModeBtn" parent="TabContainer/Video/MarginContainer/VBoxContainer" instance=ExtResource("1_xlieq")]
 layout_mode = 2
-theme_override_constants/separation = 20
+size_flags_horizontal = 0
 
-[node name="WindowModeBtn" parent="TabContainer/Video/MarginContainer/ScrollContainer/VBoxContainer" instance=ExtResource("1_xlieq")]
+[node name="ResolutionModeBtn" parent="TabContainer/Video/MarginContainer/VBoxContainer" instance=ExtResource("2_ytfqw")]
 layout_mode = 2
 
 [node name="Controls" type="TabBar" parent="TabContainer"]
