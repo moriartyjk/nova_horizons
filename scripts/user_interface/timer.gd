@@ -8,6 +8,7 @@ var isRunning: bool = false
 # Called when the node enters the scene tree for the first time.
 func _ready() -> void:
 	#_start_timer() # test ready function
+	timer_label.hide()
 	pass
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -18,6 +19,7 @@ func _process(delta: float) -> void:
 
 # Starts timer
 func _start_timer() -> void:
+	timer_label.show()
 	countdown.start()
 	isRunning = !isRunning
 
