@@ -9,3 +9,8 @@ func _on_resume_pressed() -> void:
 func _on_quit_pressed() -> void:
 	print('Quit Game')
 	get_tree().quit()
+
+
+func _on_settings_pressed() -> void:
+	print('View Settings Menu')
+	get_tree().change_scene_to_file("res://scenes/menus/settings.tscn")

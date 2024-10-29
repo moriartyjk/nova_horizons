@@ -25,4 +25,3 @@ func _process(delta: float) -> void:
 
 func _on_option_button_item_selected(index: int) -> void:
 	DisplayServer.window_set_size(RESOLUTION_DICT.values()[index])
-	#pass # Replace with function body.
