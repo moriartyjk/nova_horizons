@@ -28,7 +28,7 @@ environment = SubResource("Environment_ipgco")
 [node name="NovaHorizonShip" parent="." instance=ExtResource("5_c2e6d")]
 
 [node name="RoboDrone" parent="." instance=ExtResource("2_cje2b")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.14889, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 motion_mode = 1
 
 [node name="UI" type="Node" parent="."]
