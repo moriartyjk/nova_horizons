@@ -1,0 +1,56 @@
+[gd_scene load_steps=2 format=3 uid="uid://4me73sqeg2xw"]
+
+[ext_resource type="Material" uid="uid://bl8o0s4nu5t8d" path="res://assets/materials/ship_walls.tres" id="1_mu203"]
+
+[node name="NovaHorizonShip" type="Node3D"]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.15, 17)
+use_collision = true
+size = Vector3(20, 20, 0.5)
+material = ExtResource("1_mu203")
+
+[node name="CSGBox3D2" type="CSGBox3D" parent="."]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, 14.8683, 10.1497, 8.41744)
+use_collision = true
+size = Vector3(20, 20, 0.5)
+material = ExtResource("1_mu203")
+
+[node name="CSGBox3D6" type="CSGBox3D" parent="."]
+transform = Transform3D(0.5, 0, 0.866025, 0, 1, 0, -0.866025, 0, 0.5, -14.868, 10.15, -8.417)
+use_collision = true
+size = Vector3(20, 20, 0.5)
+material = ExtResource("1_mu203")
+
+[node name="CSGBox3D3" type="CSGBox3D" parent="."]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, -14.868, 10.15, 8.417)
+use_collision = true
+size = Vector3(20, 20, 0.5)
+material = ExtResource("1_mu203")
+
+[node name="CSGBox3D5" type="CSGBox3D" parent="."]
+transform = Transform3D(0.5, 0, -0.866025, 0, 1, 0, 0.866025, 0, 0.5, 14.868, 10.15, -8.417)
+use_collision = true
+size = Vector3(20, 20, 0.5)
+material = ExtResource("1_mu203")
+
+[node name="CSGBox3D4" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 10.15, -17.06)
+use_collision = true
+size = Vector3(20, 20, 0.5)
+material = ExtResource("1_mu203")
+
+[node name="Floor" type="CSGCylinder3D" parent="."]
+use_collision = true
+radius = 20.0
+height = 0.5
+sides = 6
+material = ExtResource("1_mu203")
+
+[node name="Floor2" type="CSGCylinder3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 20, 0)
+use_collision = true
+radius = 20.0
+height = 0.5
+sides = 6
+material = ExtResource("1_mu203")

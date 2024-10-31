@@ -26,6 +26,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.731932, 0)
 
 [node name="InteractRay" parent="Neck" instance=ExtResource("2_f1aqj")]
 
+[node name="SpotLight3D" type="SpotLight3D" parent="Neck"]
+light_energy = 3.0
+spot_range = 10.0
+
 [node name="RoboDrone" type="Node3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.826707, 0)
 
