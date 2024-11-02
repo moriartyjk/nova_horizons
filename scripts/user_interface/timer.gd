@@ -40,7 +40,6 @@ func _on_countdown_timeout() -> void:
 	get_tree().reload_current_scene()
 
 
-func _on_start_timer_button_interacted(body: Variant) -> void:
-	if countdown.is_stopped():
-		_start_timer()
+func _on_start_button_interacted(body: Variant) -> void:
+	_start_timer()
 	#pass # Replace with function body.
