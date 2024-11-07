@@ -1,7 +1,8 @@
-[gd_scene load_steps=9 format=3 uid="uid://dyoh6fxxpe67a"]
+[gd_scene load_steps=10 format=3 uid="uid://dyoh6fxxpe67a"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_01hu1"]
 [ext_resource type="PackedScene" uid="uid://ciajsvy2jp62v" path="res://scenes/robo_drone.tscn" id="2_cje2b"]
+[ext_resource type="PackedScene" uid="uid://1xj4qq0op506" path="res://scenes/button.tscn" id="3_1ctfe"]
 [ext_resource type="PackedScene" uid="uid://d1m18lh8uhi7k" path="res://scenes/ui_elements/timer.tscn" id="3_ou05k"]
 [ext_resource type="PackedScene" uid="uid://4me73sqeg2xw" path="res://scenes/nova_horizon_ship.tscn" id="5_c2e6d"]
 [ext_resource type="PackedScene" uid="uid://dd0omf2ya3rul" path="res://scenes/menus/pause_menu.tscn" id="6_jc474"]
@@ -27,6 +28,10 @@ environment = SubResource("Environment_ipgco")
 
 [node name="NovaHorizonShip" parent="." instance=ExtResource("5_c2e6d")]
 
+[node name="StartButton" parent="." instance=ExtResource("3_1ctfe")]
+transform = Transform3D(1, 0, 0, 0, -4.37114e-08, -1, 0, 1, -4.37114e-08, 2.13248, 0.694796, 4.63662)
+prompt_message = "Start Time"
+
 [node name="RoboDrone" parent="." instance=ExtResource("2_cje2b")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 motion_mode = 1
@@ -37,3 +42,5 @@ motion_mode = 1
 
 [node name="PauseMenu" parent="UI" instance=ExtResource("6_jc474")]
 visible = false
+
+[connection signal="interacted" from="StartButton" to="UI/Timer" method="_on_start_button_interacted"]
