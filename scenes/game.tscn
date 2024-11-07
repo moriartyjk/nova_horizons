@@ -47,5 +47,6 @@ visible = false
 [node name="AmbientBackground" type="AudioStreamPlayer" parent="."]
 stream = ExtResource("7_iqxb7")
 autoplay = true
+parameters/looping = true
 
 [connection signal="interacted" from="StartButton" to="UI/Timer" method="_on_start_button_interacted"]
