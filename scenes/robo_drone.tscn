@@ -4,23 +4,21 @@
 [ext_resource type="PackedScene" uid="uid://cbjs0beewawt7" path="res://interact/interact_ray.tscn" id="2_f1aqj"]
 [ext_resource type="PackedScene" uid="uid://d4soujoi2yl6" path="res://scenes/ui_elements/crosshair.tscn" id="2_yxtwe"]
 
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_d82t7"]
+[sub_resource type="SphereMesh" id="SphereMesh_yp7nk"]
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_g8you"]
+[sub_resource type="SphereShape3D" id="SphereShape3D_5bgva"]
 
 [node name="RoboDrone" type="CharacterBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
 script = ExtResource("1_1lj84")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.232685, 0)
-mesh = SubResource("CapsuleMesh_d82t7")
+mesh = SubResource("SphereMesh_yp7nk")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
-shape = SubResource("CapsuleShape3D_g8you")
+shape = SubResource("SphereShape3D_5bgva")
 
 [node name="Neck" type="Node3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.731932, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Neck"]
 
