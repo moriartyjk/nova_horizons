@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://dyoh6fxxpe67a"]
+[gd_scene load_steps=11 format=3 uid="uid://dyoh6fxxpe67a"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_01hu1"]
 [ext_resource type="PackedScene" uid="uid://ciajsvy2jp62v" path="res://scenes/robo_drone.tscn" id="2_cje2b"]
@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://d1m18lh8uhi7k" path="res://scenes/ui_elements/timer.tscn" id="3_ou05k"]
 [ext_resource type="PackedScene" uid="uid://4me73sqeg2xw" path="res://scenes/nova_horizon_ship.tscn" id="5_c2e6d"]
 [ext_resource type="PackedScene" uid="uid://dd0omf2ya3rul" path="res://scenes/menus/pause_menu.tscn" id="6_jc474"]
+[ext_resource type="AudioStream" uid="uid://cfot6mr633oxs" path="res://assets/audio/01_haunted_spaceship.ogg" id="7_iqxb7"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u5gor"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -42,5 +43,10 @@ motion_mode = 1
 
 [node name="PauseMenu" parent="UI" instance=ExtResource("6_jc474")]
 visible = false
+
+[node name="AmbientBackground" type="AudioStreamPlayer" parent="."]
+stream = ExtResource("7_iqxb7")
+autoplay = true
+parameters/looping = true
 
 [connection signal="interacted" from="StartButton" to="UI/Timer" method="_on_start_button_interacted"]
