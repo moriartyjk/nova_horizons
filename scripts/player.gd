@@ -17,13 +17,6 @@ func _input(event: InputEvent) -> void:
 	if event is InputEventMouseMotion and Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
 		rotate_object_local(Vector3.UP, -event.relative.x * mouse_sensitivity)
 		rotate_object_local(Vector3.RIGHT, -event.relative.y * mouse_sensitivity)
-	#
-	## Toggle mouse capture
-	#if event.is_action_pressed("ui_cancel"):
-		#if Input.get_mouse_mode() == Input.MOUSE_MODE_CAPTURED:
-			#Input.set_mouse_mode(Input.MOUSE_MODE_VISIBLE)
-		#else:
-			#Input.set_mouse_mode(Input.MOUSE_MODE_CAPTURED)
 
 func _physics_process(delta: float) -> void:
 	# Get input direction
