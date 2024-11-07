@@ -1,6 +1,6 @@
 extends CharacterBody3D
 
-@export var thrust_power: float = 10.0
+@export var thrust_power: float = 20.0
 @export var dampening: float = 0.95  # Reduces drift
 @export var mouse_sensitivity: float = 0.002
 
