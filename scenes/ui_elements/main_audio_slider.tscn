@@ -9,10 +9,5 @@ theme_override_constants/separation = 100
 alignment = 0
 
 [node name="Label" parent="HBoxContainer" index="0"]
-theme_override_font_sizes/font_size = 30
 text = "Main Audio
 "
-
-[node name="Amount" type="Label" parent="HBoxContainer" index="3"]
-layout_mode = 2
-text = "0%"

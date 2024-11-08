@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dpr0b5ogw5jf6"]
+
+[ext_resource type="PackedScene" uid="uid://cr1fd84d0sbjv" path="res://scenes/ui_elements/settings_slider.tscn" id="1_uyja4"]
+
+[node name="SFXSlider" instance=ExtResource("1_uyja4")]
+
+[node name="Label" parent="HBoxContainer" index="0"]
+text = "SFX"
