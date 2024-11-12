@@ -1,0 +1,94 @@
+[gd_scene load_steps=3 format=3 uid="uid://bbrj1takg4dcc"]
+
+[ext_resource type="Script" path="res://scripts/menu/death_screen.gd" id="1_djd8h"]
+[ext_resource type="SystemFont" uid="uid://bk67ajip613n8" path="res://assets/fonts/btn_impact.tres" id="1_fep2e"]
+
+[node name="DeathScreen" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_djd8h")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.321569, 0.0784314, 0.0823529, 0.698039)
+
+[node name="MarginContainer" type="MarginContainer" parent="ColorRect"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 20
+theme_override_constants/margin_top = 20
+theme_override_constants/margin_right = 20
+theme_override_constants/margin_bottom = 20
+
+[node name="TitleVBox" type="VBoxContainer" parent="ColorRect/MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 20
+
+[node name="Separator" type="Control" parent="ColorRect/MarginContainer/TitleVBox"]
+layout_mode = 2
+
+[node name="Header" type="Label" parent="ColorRect/MarginContainer/TitleVBox"]
+layout_mode = 2
+theme_override_colors/font_shadow_color = Color(0.952941, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 3
+theme_override_constants/shadow_offset_y = 2
+theme_override_fonts/font = ExtResource("1_fep2e")
+theme_override_font_sizes/font_size = 50
+text = "MISION FAILED"
+horizontal_alignment = 1
+
+[node name="HBoxContainer" type="HBoxContainer" parent="ColorRect/MarginContainer"]
+layout_mode = 2
+alignment = 1
+
+[node name="BtnVBox" type="VBoxContainer" parent="ColorRect/MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 16
+alignment = 1
+
+[node name="Separator1" type="Control" parent="ColorRect/MarginContainer/HBoxContainer/BtnVBox"]
+layout_mode = 2
+
+[node name="Retry" type="Button" parent="ColorRect/MarginContainer/HBoxContainer/BtnVBox"]
+custom_minimum_size = Vector2(260, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_fep2e")
+theme_override_font_sizes/font_size = 40
+text = "Retry"
+
+[node name="Separator2" type="Control" parent="ColorRect/MarginContainer/HBoxContainer/BtnVBox"]
+layout_mode = 2
+
+[node name="Exit" type="Button" parent="ColorRect/MarginContainer/HBoxContainer/BtnVBox"]
+custom_minimum_size = Vector2(260, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_fep2e")
+theme_override_font_sizes/font_size = 40
+text = "Exit to Menu"
+
+[node name="Separator3" type="Control" parent="ColorRect/MarginContainer/HBoxContainer/BtnVBox"]
+layout_mode = 2
+
+[node name="Quit" type="Button" parent="ColorRect/MarginContainer/HBoxContainer/BtnVBox"]
+custom_minimum_size = Vector2(260, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_fep2e")
+theme_override_font_sizes/font_size = 40
+text = "Quit Game"
+
+[connection signal="pressed" from="ColorRect/MarginContainer/HBoxContainer/BtnVBox/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/HBoxContainer/BtnVBox/Exit" to="." method="_on_exit_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/HBoxContainer/BtnVBox/Quit" to="." method="_on_quit_pressed"]

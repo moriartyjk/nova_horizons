@@ -37,7 +37,10 @@ func _format_seconds(time : float, use_milliseconds : bool) -> String:
 
 
 func _on_countdown_timeout() -> void:
-	get_tree().reload_current_scene()
+	#get_tree().reload_current_scene()
+	# uncapture mouse
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
+	get_tree().change_scene_to_file("res://scenes/menus/death_screen.tscn")
 
 
 func _on_start_button_interacted(body: Variant) -> void:
