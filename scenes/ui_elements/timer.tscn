@@ -24,6 +24,7 @@ text = "60:00"
 
 [node name="Countdown" type="Timer" parent="CountdownText"]
 wait_time = 3600.0
+one_shot = true
 
 [connection signal="timeout" from="CountdownText/Countdown" to="." method="_on_countdown_timeout"]
 [connection signal="timeout" from="CountdownText/Countdown" to="CountdownText" method="_on_countdown_timeout"]
