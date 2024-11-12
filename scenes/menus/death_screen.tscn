@@ -1,5 +1,6 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbrj1takg4dcc"]
+[gd_scene load_steps=3 format=3 uid="uid://bbrj1takg4dcc"]
 
+[ext_resource type="Script" path="res://scripts/menu/death_screen.gd" id="1_djd8h"]
 [ext_resource type="SystemFont" uid="uid://bk67ajip613n8" path="res://assets/fonts/btn_impact.tres" id="1_fep2e"]
 
 [node name="DeathScreen" type="Control"]
@@ -9,6 +10,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
+script = ExtResource("1_djd8h")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -76,3 +78,6 @@ layout_mode = 2
 theme_override_fonts/font = ExtResource("1_fep2e")
 theme_override_font_sizes/font_size = 40
 text = "Quit"
+
+[connection signal="pressed" from="ColorRect/MarginContainer/HBoxContainer/BtnVBox/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/HBoxContainer/BtnVBox/Quit" to="." method="_on_quit_pressed"]
