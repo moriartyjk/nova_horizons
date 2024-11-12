@@ -1,7 +1,9 @@
-[gd_scene load_steps=3 format=3 uid="uid://btmdgyc774qgm"]
+[gd_scene load_steps=5 format=3 uid="uid://btmdgyc774qgm"]
 
-[ext_resource type="PackedScene" uid="uid://cdlr211mwm34n" path="res://scenes/ui_elements/window_mode_btn.tscn" id="1_xlieq"]
-[ext_resource type="PackedScene" uid="uid://cycmyhemh8dvw" path="res://scenes/ui_elements/resolution_mode_btn.tscn" id="2_ytfqw"]
+[ext_resource type="PackedScene" uid="uid://56vda5t8xd6a" path="res://scenes/menus/menu_elements/window_mode_btn.tscn" id="1_1bjko"]
+[ext_resource type="PackedScene" uid="uid://cn6ucn8d2u6s5" path="res://scenes/menus/menu_elements/main_audio_slider.tscn" id="1_2dqyb"]
+[ext_resource type="PackedScene" uid="uid://cxdyx2nk60rwf" path="res://scenes/menus/menu_elements/resolution_mode_btn.tscn" id="2_e1rw1"]
+[ext_resource type="PackedScene" uid="uid://ci48n81dgt2cd" path="res://scenes/menus/menu_elements/sfx_audio_slider.tscn" id="2_gx2yp"]
 
 [node name="SettingsTabs" type="Control"]
 layout_mode = 3
@@ -19,11 +21,11 @@ anchor_bottom = 1.0
 offset_left = 100.0
 offset_top = 50.0
 offset_right = -100.0
-offset_bottom = -100.0
+offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 1
+current_tab = 2
 
 [node name="Audio" type="TabBar" parent="TabContainer"]
 visible = false
@@ -45,13 +47,15 @@ theme_override_constants/margin_bottom = 24
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Audio/MarginContainer"]
 layout_mode = 2
 theme_override_constants/separation = 64
-alignment = 1
 
-[node name="Label" type="Label" parent="TabContainer/Audio/MarginContainer/VBoxContainer"]
+[node name="MainAudioSlider" parent="TabContainer/Audio/MarginContainer/VBoxContainer" instance=ExtResource("1_2dqyb")]
 layout_mode = 2
-text = "Setting1"
+
+[node name="SFXAudioSlider" parent="TabContainer/Audio/MarginContainer/VBoxContainer" instance=ExtResource("2_gx2yp")]
+layout_mode = 2
 
 [node name="Video" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 1
 
@@ -69,17 +73,15 @@ theme_override_constants/margin_bottom = 24
 
 [node name="VBoxContainer" type="VBoxContainer" parent="TabContainer/Video/MarginContainer"]
 layout_mode = 2
-theme_override_constants/separation = 100
+theme_override_constants/separation = 80
 
-[node name="WindowModeBtn" parent="TabContainer/Video/MarginContainer/VBoxContainer" instance=ExtResource("1_xlieq")]
+[node name="WindowModeBtn" parent="TabContainer/Video/MarginContainer/VBoxContainer" instance=ExtResource("1_1bjko")]
 layout_mode = 2
-size_flags_horizontal = 0
 
-[node name="ResolutionModeBtn" parent="TabContainer/Video/MarginContainer/VBoxContainer" instance=ExtResource("2_ytfqw")]
+[node name="ResolutionModeBtn" parent="TabContainer/Video/MarginContainer/VBoxContainer" instance=ExtResource("2_e1rw1")]
 layout_mode = 2
 
 [node name="Controls" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
@@ -100,9 +102,10 @@ layout_mode = 2
 theme_override_constants/separation = 64
 alignment = 1
 
-[node name="Label3" type="Label" parent="TabContainer/Controls/MarginContainer/VBoxContainer"]
+[node name="Label" type="Label" parent="TabContainer/Controls/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Setting3"
+text = "CONTROLS"
+horizontal_alignment = 1
 
 [node name="Accecibility" type="TabBar" parent="TabContainer"]
 visible = false
@@ -126,7 +129,8 @@ layout_mode = 2
 theme_override_constants/separation = 64
 alignment = 1
 
-[node name="Label4" type="Label" parent="TabContainer/Accecibility/MarginContainer/VBoxContainer"]
+[node name="Accecibility" type="Label" parent="TabContainer/Accecibility/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Setting4
+text = "ACCECIBILITY
 "
+horizontal_alignment = 1
