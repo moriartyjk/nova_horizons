@@ -63,7 +63,7 @@ alignment = 1
 layout_mode = 2
 
 [node name="Retry" type="Button" parent="ColorRect/MarginContainer/HBoxContainer/BtnVBox"]
-custom_minimum_size = Vector2(120, 60)
+custom_minimum_size = Vector2(260, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_fep2e")
 theme_override_font_sizes/font_size = 40
@@ -72,12 +72,23 @@ text = "Retry"
 [node name="Separator2" type="Control" parent="ColorRect/MarginContainer/HBoxContainer/BtnVBox"]
 layout_mode = 2
 
-[node name="Quit" type="Button" parent="ColorRect/MarginContainer/HBoxContainer/BtnVBox"]
-custom_minimum_size = Vector2(120, 60)
+[node name="Exit" type="Button" parent="ColorRect/MarginContainer/HBoxContainer/BtnVBox"]
+custom_minimum_size = Vector2(260, 60)
 layout_mode = 2
 theme_override_fonts/font = ExtResource("1_fep2e")
 theme_override_font_sizes/font_size = 40
-text = "Quit"
+text = "Exit to Menu"
+
+[node name="Separator3" type="Control" parent="ColorRect/MarginContainer/HBoxContainer/BtnVBox"]
+layout_mode = 2
+
+[node name="Quit" type="Button" parent="ColorRect/MarginContainer/HBoxContainer/BtnVBox"]
+custom_minimum_size = Vector2(260, 60)
+layout_mode = 2
+theme_override_fonts/font = ExtResource("1_fep2e")
+theme_override_font_sizes/font_size = 40
+text = "Quit Game"
 
 [connection signal="pressed" from="ColorRect/MarginContainer/HBoxContainer/BtnVBox/Retry" to="." method="_on_retry_pressed"]
+[connection signal="pressed" from="ColorRect/MarginContainer/HBoxContainer/BtnVBox/Exit" to="." method="_on_exit_pressed"]
 [connection signal="pressed" from="ColorRect/MarginContainer/HBoxContainer/BtnVBox/Quit" to="." method="_on_quit_pressed"]
