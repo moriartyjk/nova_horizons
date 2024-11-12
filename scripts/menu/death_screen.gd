@@ -13,9 +13,9 @@ func _process(delta: float) -> void:
 
 func _on_retry_pressed() -> void:
 	print('Retry Mission')
-	pass # Replace with function body.
+	get_tree().change_scene_to_file("res://scenes/game.tscn")
 
 
 func _on_quit_pressed() -> void:
 	print('Quit Game')
-	pass # Replace with function body.
+	get_tree().quit()
