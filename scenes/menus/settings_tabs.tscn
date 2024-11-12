@@ -25,9 +25,10 @@ offset_bottom = -50.0
 grow_horizontal = 2
 grow_vertical = 2
 tab_alignment = 1
-current_tab = 0
+current_tab = 2
 
 [node name="Audio" type="TabBar" parent="TabContainer"]
+visible = false
 layout_mode = 2
 metadata/_tab_index = 0
 
@@ -81,7 +82,6 @@ layout_mode = 2
 layout_mode = 2
 
 [node name="Controls" type="TabBar" parent="TabContainer"]
-visible = false
 layout_mode = 2
 metadata/_tab_index = 2
 
@@ -101,6 +101,11 @@ theme_override_constants/margin_bottom = 24
 layout_mode = 2
 theme_override_constants/separation = 64
 alignment = 1
+
+[node name="Label" type="Label" parent="TabContainer/Controls/MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "CONTROLS"
+horizontal_alignment = 1
 
 [node name="Accecibility" type="TabBar" parent="TabContainer"]
 visible = false
@@ -126,6 +131,6 @@ alignment = 1
 
 [node name="Accecibility" type="Label" parent="TabContainer/Accecibility/MarginContainer/VBoxContainer"]
 layout_mode = 2
-text = "Setting4
+text = "ACCECIBILITY
 "
 horizontal_alignment = 1
