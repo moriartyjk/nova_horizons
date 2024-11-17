@@ -1,8 +1,8 @@
 [gd_scene load_steps=6 format=3 uid="uid://ciajsvy2jp62v"]
 
-[ext_resource type="Script" path="res://scripts/player.gd" id="1_1lj84"]
-[ext_resource type="PackedScene" uid="uid://cbjs0beewawt7" path="res://interact/interact_ray.tscn" id="2_f1aqj"]
-[ext_resource type="PackedScene" uid="uid://d4soujoi2yl6" path="res://scenes/ui_elements/crosshair.tscn" id="2_yxtwe"]
+[ext_resource type="Script" path="res://scripts/player/player.gd" id="1_1lj84"]
+[ext_resource type="PackedScene" uid="uid://cbjs0beewawt7" path="res://scenes/player/interact_ray.tscn" id="2_f1aqj"]
+[ext_resource type="PackedScene" uid="uid://d4soujoi2yl6" path="res://scenes/gui/crosshair.tscn" id="2_yxtwe"]
 
 [sub_resource type="SphereMesh" id="SphereMesh_yp7nk"]
 

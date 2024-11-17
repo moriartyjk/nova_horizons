@@ -1,6 +1,6 @@
 [gd_scene load_steps=5 format=3 uid="uid://de6vrd6ankby6"]
 
-[ext_resource type="Script" path="res://scripts/start_timer_btn.gd" id="1_87rh7"]
+[ext_resource type="Script" path="res://scripts/buttons/start_timer_btn.gd" id="1_87rh7"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_75sfa"]
 albedo_color = Color(0.368627, 1, 0.376471, 1)

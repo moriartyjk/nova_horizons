@@ -1,10 +1,10 @@
 [gd_scene load_steps=11 format=3 uid="uid://dyoh6fxxpe67a"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_01hu1"]
-[ext_resource type="PackedScene" uid="uid://ciajsvy2jp62v" path="res://scenes/robo_drone.tscn" id="2_cje2b"]
-[ext_resource type="PackedScene" uid="uid://1xj4qq0op506" path="res://scenes/button.tscn" id="3_1ctfe"]
-[ext_resource type="PackedScene" uid="uid://d1m18lh8uhi7k" path="res://scenes/ui_elements/timer.tscn" id="3_ou05k"]
-[ext_resource type="PackedScene" uid="uid://4me73sqeg2xw" path="res://scenes/nova_horizon_ship.tscn" id="5_c2e6d"]
+[ext_resource type="PackedScene" uid="uid://ciajsvy2jp62v" path="res://scenes/player/robo_drone.tscn" id="2_cje2b"]
+[ext_resource type="PackedScene" uid="uid://1xj4qq0op506" path="res://scenes/buttons/button.tscn" id="3_1ctfe"]
+[ext_resource type="PackedScene" uid="uid://d1m18lh8uhi7k" path="res://scenes/gui/timer.tscn" id="3_ou05k"]
+[ext_resource type="PackedScene" uid="uid://4me73sqeg2xw" path="res://scenes/game_world/nova_horizon_ship.tscn" id="5_c2e6d"]
 [ext_resource type="PackedScene" uid="uid://dd0omf2ya3rul" path="res://scenes/menus/pause_menu.tscn" id="6_jc474"]
 [ext_resource type="AudioStream" uid="uid://dqvu6hcfkno18" path="res://assets/sounds/01_haunted_spaceship.ogg" id="7_axgep"]
 

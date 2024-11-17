@@ -1,6 +1,6 @@
 [gd_scene load_steps=3 format=3 uid="uid://d1m18lh8uhi7k"]
 
-[ext_resource type="Script" path="res://scripts/user_interface/timer.gd" id="1_bjdsp"]
+[ext_resource type="Script" path="res://scripts/gui/timer.gd" id="1_bjdsp"]
 [ext_resource type="FontFile" uid="uid://bovwqt135fwpi" path="res://assets/fonts/alarm clock.ttf" id="2_6l7q5"]
 
 [node name="Timer" type="Control"]
