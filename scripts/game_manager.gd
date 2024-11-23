@@ -42,16 +42,16 @@ func start_game():
 func pause_game():
 	if current_state == GameState.PLAYING:
 		print('GameManager - Game Paused')
-		# TODO mouse capture?
 		change_game_state(GameState.PAUSED)
-		get_tree().paused = true
+		Engine.time_scale = 0
+		Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 
 func resume_game():
 	if current_state == GameState.PAUSED:
 		print('GameManager - Game Resumed')
-		# TODO mouse capture?
 		change_game_state(GameState.PLAYING)
-		get_tree().paused = false
+		Engine.time_scale = 1
+		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func game_over():
 	change_game_state(GameState.GAME_OVER)
