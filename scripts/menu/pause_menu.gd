@@ -1,6 +1,6 @@
 extends Control
 
-@onready var game: Node3D = $"../.."
+#@onready var game: Node3D = $"../.."
 
 func _on_resume_pressed() -> void:
 	GameManager.resume_game()

@@ -32,6 +32,7 @@ func load_game_data():
 
 func change_game_state(new_state: int):
 	current_state = new_state
+	print("Game State ", new_state)
 	emit_signal("game_state_changed", new_state)
 	
 func start_game():
