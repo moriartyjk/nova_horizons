@@ -15,9 +15,12 @@ run/main_scene="res://scenes/menus/main_menu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GameManager="*res://scenes/game_manager.tscn"
+
 [display]
 
-window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [editor]

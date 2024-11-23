@@ -41,8 +41,8 @@ func _format_seconds(time : float, use_milliseconds : bool) -> String:
 func _on_countdown_timeout() -> void:
 	#get_tree().reload_current_scene()
 	# uncapture mouse
+	GameManager.game_over()
 	ambient_bg.stream_paused = true # turn off music for now
-	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	get_tree().change_scene_to_file("res://scenes/menus/death_screen.tscn")
 
 
