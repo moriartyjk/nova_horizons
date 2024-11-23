@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cyk4ttkjcjalq"]
+
+[ext_resource type="Script" path="res://scripts/alarms/base_alarm.gd" id="1_7cfyu"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_akavt"]
+albedo_color = Color(0.823529, 0.231373, 0.823529, 1)
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_vb2c2"]
+material = SubResource("StandardMaterial3D_akavt")
+top_radius = 0.0
+height = 0.5
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_mvou1"]
+
+[node name="BaseAlarm" type="StaticBody3D"]
+script = ExtResource("1_7cfyu")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_vb2c2")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("SphereShape3D_mvou1")
+
+[connection signal="interacted" from="." to="." method="_on_interacted"]
