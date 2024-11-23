@@ -4,7 +4,7 @@ extends Node
 var instance = null
 
 ## game state
-enum GameState {MENU, SETTINGS, PLAYING, PAUSED, GAME_OVER}
+enum GameState {MENU, SETTINGS, PLAYING, PAUSED, GAME_OVER, QUIT}
 var current_state: int = GameState.MENU
 
 ## Game Settings
@@ -69,3 +69,7 @@ func game_over():
 	change_game_state(GameState.GAME_OVER)
 	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	# save game data
+
+func quit_game():
+	print('GameManager - Closing Window')
+	get_tree().quit()
