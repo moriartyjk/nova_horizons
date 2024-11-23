@@ -53,6 +53,11 @@ func resume_game():
 		change_game_state(GameState.PLAYING)
 		Engine.time_scale = 1
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
+		
+func back_to_menu():
+	print('GameManager - Back to Main Menu')
+	change_game_state(GameState.MENU)
+	get_tree().change_scene_to_file("res://scenes/menus/main_menu.tscn") 
 
 func game_over():
 	print('GameManager - Game Over')
