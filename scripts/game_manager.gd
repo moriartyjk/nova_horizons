@@ -4,7 +4,7 @@ extends Node
 var instance = null
 
 ## game state
-enum GameState {MENU, PLAYING, PAUSED, GAME_OVER}
+enum GameState {MENU, SETTINGS, PLAYING, PAUSED, GAME_OVER}
 var current_state: int = GameState.MENU
 
 ## Game Settings
@@ -53,7 +53,12 @@ func resume_game():
 		change_game_state(GameState.PLAYING)
 		Engine.time_scale = 1
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
-		
+
+func change_settings():
+	print('GameManager - View Setings')
+	change_game_state(GameState.SETTINGS)
+	get_tree().change_scene_to_file("res://scenes/menus/settings.tscn")
+
 func back_to_menu():
 	print('GameManager - Back to Main Menu')
 	change_game_state(GameState.MENU)

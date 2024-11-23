@@ -11,5 +11,4 @@ func _on_quit_pressed() -> void:
 
 
 func _on_settings_pressed() -> void:
-	print('View Settings Menu')
-	get_tree().change_scene_to_file("res://scenes/menus/settings.tscn")
+	GameManager.change_settings()

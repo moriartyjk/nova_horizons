@@ -96,17 +96,6 @@ theme_override_font_sizes/font_size = 30
 text = "Settings
 "
 
-[node name="Separator4" type="Control" parent="MarginContainer/HBoxButtons/VBoxButtons"]
-layout_mode = 2
-
-[node name="Controls" type="Button" parent="MarginContainer/HBoxButtons/VBoxButtons"]
-layout_mode = 2
-size_flags_vertical = 4
-theme_override_colors/font_color = Color(0.133333, 0.6, 0.6, 1)
-theme_override_fonts/font = ExtResource("3_gkkhb")
-theme_override_font_sizes/font_size = 30
-text = "Controls"
-
 [node name="Separator5" type="Control" parent="MarginContainer/HBoxButtons/VBoxButtons"]
 layout_mode = 2
 
@@ -120,5 +109,4 @@ text = "Exit"
 
 [connection signal="pressed" from="MarginContainer/HBoxButtons/VBoxButtons/Play" to="." method="_on_play_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxButtons/VBoxButtons/Settings" to="." method="_on_settings_pressed"]
-[connection signal="pressed" from="MarginContainer/HBoxButtons/VBoxButtons/Controls" to="." method="_on_controls_pressed"]
 [connection signal="pressed" from="MarginContainer/HBoxButtons/VBoxButtons/Exit" to="." method="_on_exit_pressed"]
