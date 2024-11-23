@@ -2,8 +2,6 @@ extends Control
 
 func _on_play_pressed() -> void:
 	GameManager.start_game()
-	#print('Play Game!')
-
 
 func _on_settings_pressed() -> void:
 	print('View Settings Menu')
