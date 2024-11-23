@@ -23,8 +23,9 @@ func _ready():
 
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("pause") and current_state == GameState.PLAYING:
-		print('GameManager - Esc Pressed')
 		pause_game()
+	elif Input.is_action_just_pressed("pause") and current_state == GameState.PAUSED:
+		resume_game() 
 	
 func load_game_data():
 	# save data here
@@ -32,7 +33,6 @@ func load_game_data():
 
 func change_game_state(new_state: int):
 	current_state = new_state
-	print("Game State ", new_state)
 	emit_signal("game_state_changed", new_state)
 	
 func start_game():
@@ -55,5 +55,7 @@ func resume_game():
 		Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 
 func game_over():
+	print('GameManager - Game Over')
 	change_game_state(GameState.GAME_OVER)
+	Input.mouse_mode = Input.MOUSE_MODE_VISIBLE
 	# save game data
