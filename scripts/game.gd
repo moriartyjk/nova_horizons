@@ -3,6 +3,8 @@ extends Node3D
 @onready var pause_menu: Control = $UI/PauseMenu
 @onready var ambient_bg: AudioStreamPlayer = $AmbientBG
 
+var game_manager = GameManager.instance
+
 var paused = false
 var playback_pos = 0.0
 
@@ -11,10 +13,11 @@ func _ready() -> void:
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta: float) -> void:
+	pass
 	
-	if Input.is_action_just_pressed("pause"):
-		playback_pos = ambient_bg.get_playback_position()
-		pauseMenu()
+	#if Input.is_action_just_pressed("pause"):
+		#playback_pos = ambient_bg.get_playback_position()
+		#pauseMenu()
 	
 		
 func pauseMenu():

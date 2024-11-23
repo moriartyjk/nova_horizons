@@ -1,8 +1,9 @@
 extends Control
 
 func _on_play_pressed() -> void:
-	print('Play Game!')
-	get_tree().change_scene_to_file("res://scenes/game.tscn")
+	GameManager.start_game()
+	#print('Play Game!')
+
 
 func _on_settings_pressed() -> void:
 	print('View Settings Menu')
