@@ -25,8 +25,25 @@ func get_sounding_count() -> int:
 	
 	print('Num Sounding Alarms: ', count)
 	return count
+	
+func sound_alarm(alarm_name: String):
+	alarm_dict[alarm_name] = AlarmStatus.SOUNDING
+	emit_signal("alarm_status_updated", alarm_name, AlarmStatus.SOUNDING)
+	print("AHSManager - ", alarm_name, " is Sounding")
+	
+func silence_alarm(alarm_name: String):
+	alarm_dict[alarm_name] = AlarmStatus.SILENT
+	emit_signal("alarm_status_updated", alarm_name, AlarmStatus.SILENT)
+	print("AHSManager - ", alarm_name, " is Silent")
 
 func update_alarm_status(alarm_name: String, new_status: int):
 	alarm_dict[alarm_name] = new_status
 	emit_signal("alarm_status_updated", alarm_name, new_status)
-	print("AHSManager - ", alarm_name, " is ",  new_status)
+	match alarm_dict[alarm_name]:
+		AlarmStatus.SILENT:
+			print("AHSManager - ", alarm_name, " is Silent")
+		AlarmStatus.SOUNDING:
+			print("AHSManager - ", alarm_name, " is Sounding")
+
+func get_current_status(alarm_name: String) -> int:
+	return alarm_dict[alarm_name]
