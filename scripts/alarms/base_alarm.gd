@@ -6,13 +6,14 @@ func _ready() -> void:
 	prompt_message = "Sound Alarm"
 	AhsManager.connect("alarm_status_updated", _on_alarm_status_updated)
 	
-func _on_alarm_status_updated(alarm_name: String, alarm_status: int):
+func _on_alarm_status_updated(updated_name: String, updated_status: int):
 	
-	if(alarm_status == 1):
-		prompt_message = "Silence Alarm"
-	else:
-		prompt_message = "Sound Alarm"
-	pass
+	if updated_name == alarm_name:
+	
+		if(updated_status == 1):
+			prompt_message = "Silence Alarm"
+		else:
+			prompt_message = "Sound Alarm"
 
 func _on_interacted(body: Variant) -> void:
 	var alarm_status = AhsManager.get_current_status(alarm_name)

@@ -30,11 +30,13 @@ func sound_alarm(alarm_name: String):
 	alarm_dict[alarm_name] = AlarmStatus.SOUNDING
 	emit_signal("alarm_status_updated", alarm_name, AlarmStatus.SOUNDING)
 	print("AHSManager - ", alarm_name, " is Sounding")
+	print(alarm_dict)
 	
 func silence_alarm(alarm_name: String):
 	alarm_dict[alarm_name] = AlarmStatus.SILENT
 	emit_signal("alarm_status_updated", alarm_name, AlarmStatus.SILENT)
 	print("AHSManager - ", alarm_name, " is Silent")
+	print(alarm_dict)
 
 func get_current_status(alarm_name: String) -> int:
 	return alarm_dict[alarm_name]

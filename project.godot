@@ -22,7 +22,6 @@ AhsManager="*res://scenes/ahs_manager.tscn"
 
 [display]
 
-window/size/mode=3
 window/stretch/mode="canvas_items"
 
 [editor]

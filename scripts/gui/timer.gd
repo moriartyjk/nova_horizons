@@ -4,7 +4,7 @@ extends Control
 @onready var timer: Timer = $CountdownText/Countdown
 @onready var ambient_bg: AudioStreamPlayer = $"../../AmbientBG"
 
-var time_left: float = 60.0 #seconds
+var time_left: float = 3600.0 #seconds
 var base_speed: float = 1.0 #normal multiplier
 var current_speed: float = 1.0 # current speed multiplier
 var isRunning: bool = false
@@ -21,6 +21,7 @@ func _on_countdown_timeout() -> void:
 	## uncapture mouse
 	if time_left > 0:
 		# decrease time based on current speed
+		#time_left -= timer.wait_time * current_speed
 		time_left -= timer.wait_time * current_speed
 		timer_label.text = _format_seconds(time_left, false)
 	else:
@@ -29,16 +30,13 @@ func _on_countdown_timeout() -> void:
 		#get_tree().change_scene_to_file("res://scenes/menus/death_screen.tscn")
 
 func _on_alarm_status_updated(alarm_name, alarm_status):
-	print("Updating speed??")
+	#print("Updating speed??")
 	var num_alarms = AhsManager.get_sounding_count()
-	current_speed = pow(1.33, num_alarms)
+	if current_speed > 0:
 	# Tnew = Tremaining/1.33n   T=Time, 1.33=SpeedUp Factor, n=number of alarms
-
-## Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta: float) -> void:
-	#
-	#if isRunning:	
-		#timer_label.text = _format_seconds(timer.time_left, false)
+		current_speed = pow(1.33, num_alarms)
+	else:
+		current_speed = base_speed
 
 # Starts timer
 func _start_timer() -> void:
@@ -48,8 +46,10 @@ func _start_timer() -> void:
 
 # Formats UI
 func _format_seconds(time : float, use_milliseconds : bool) -> String:
-	var minutes := time / 60
-	var seconds := fmod(time, 60)
+	#var minutes := time / 60
+	#var seconds := fmod(time, 60)
+	var minutes := time_left / 60
+	var seconds := fmod(time_left , 60)
 
 	if not use_milliseconds:
 		return "%02d:%02d" % [minutes, seconds]

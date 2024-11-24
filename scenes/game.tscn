@@ -54,17 +54,21 @@ visible = false
 [node name="Alarms" type="Node" parent="."]
 
 [node name="Alarm1" parent="Alarms" instance=ExtResource("8_gbn24")]
+unique_name_in_owner = true
 transform = Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, -5.18505, -0.707402, 7.46011)
 
 [node name="Alarm2" parent="Alarms" instance=ExtResource("9_fytd6")]
+unique_name_in_owner = true
 transform = Transform3D(0.5, -0.866025, 0, 0.866025, 0.5, 0, 0, 0, 1, 5.13782, -0.682725, 17.1972)
 alarm_name = "Alarm 2"
 
 [node name="Alarm3" parent="Alarms" instance=ExtResource("9_fytd6")]
+unique_name_in_owner = true
 transform = Transform3D(0.5, -0.866025, 0, 0.866025, 0.5, 0, 0, 0, 1, 5.13782, -0.682725, 8.3745)
 alarm_name = "Alarm 3"
 
 [node name="Alarm4" parent="Alarms" instance=ExtResource("9_fytd6")]
+unique_name_in_owner = true
 transform = Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, -5.15243, -0.682725, 16.9854)
 alarm_name = "Alarm 4"
 
