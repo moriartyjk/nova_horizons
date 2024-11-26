@@ -1,6 +1,7 @@
-[gd_scene load_steps=5 format=3 uid="uid://cyk4ttkjcjalq"]
+[gd_scene load_steps=6 format=3 uid="uid://cyk4ttkjcjalq"]
 
 [ext_resource type="Script" path="res://scripts/alarms/base_alarm.gd" id="1_7cfyu"]
+[ext_resource type="AudioStream" uid="uid://bxnk5vljbkpc" path="res://assets/sounds/siren_0004.ogg" id="2_vvmav"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_akavt"]
 albedo_color = Color(0.823529, 0.231373, 0.823529, 1)
@@ -20,5 +21,9 @@ mesh = SubResource("CylinderMesh_vb2c2")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("SphereShape3D_mvou1")
+
+[node name="AlarmSiren" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("2_vvmav")
+parameters/looping = true
 
 [connection signal="interacted" from="." to="." method="_on_interacted"]
