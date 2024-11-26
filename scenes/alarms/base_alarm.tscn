@@ -24,6 +24,8 @@ shape = SubResource("SphereShape3D_mvou1")
 
 [node name="AlarmSiren" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("2_vvmav")
+volume_db = -1.0
+max_db = 2.5
 parameters/looping = true
 
 [connection signal="interacted" from="." to="." method="_on_interacted"]
