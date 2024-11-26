@@ -4,6 +4,8 @@ var alarm_dict = {}
 enum AlarmStatus {SILENT, SOUNDING, OFF}
 var sounding_count: int = 0
 
+var sounding_times = [180, 210, 240, 270, 300] # in seconds
+
 signal alarm_status_updated(alarm_name, alarm_status)
 
 func _ready() -> void:
