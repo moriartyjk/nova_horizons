@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dyoh6fxxpe67a"]
+[gd_scene load_steps=13 format=3 uid="uid://dyoh6fxxpe67a"]
 
 [ext_resource type="Script" path="res://scripts/game.gd" id="1_01hu1"]
 [ext_resource type="PackedScene" uid="uid://ciajsvy2jp62v" path="res://scenes/player/robo_drone.tscn" id="2_cje2b"]
@@ -7,6 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://4me73sqeg2xw" path="res://scenes/game_world/nova_horizon_ship.tscn" id="5_c2e6d"]
 [ext_resource type="PackedScene" uid="uid://dd0omf2ya3rul" path="res://scenes/menus/pause_menu.tscn" id="6_jc474"]
 [ext_resource type="AudioStream" uid="uid://dqvu6hcfkno18" path="res://assets/sounds/01_haunted_spaceship.ogg" id="7_axgep"]
+[ext_resource type="PackedScene" uid="uid://b3nmpkupjmqit" path="res://scenes/alarms/alarm_1.tscn" id="8_gbn24"]
+[ext_resource type="PackedScene" uid="uid://cyk4ttkjcjalq" path="res://scenes/alarms/base_alarm.tscn" id="9_fytd6"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_u5gor"]
 sky_horizon_color = Color(0.64625, 0.65575, 0.67075, 1)
@@ -48,5 +50,26 @@ motion_mode = 1
 
 [node name="PauseMenu" parent="UI" instance=ExtResource("6_jc474")]
 visible = false
+
+[node name="Alarms" type="Node" parent="."]
+
+[node name="Alarm1" parent="Alarms" instance=ExtResource("8_gbn24")]
+unique_name_in_owner = true
+transform = Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, -5.18505, -0.707402, 7.46011)
+
+[node name="Alarm2" parent="Alarms" instance=ExtResource("9_fytd6")]
+unique_name_in_owner = true
+transform = Transform3D(0.5, -0.866025, 0, 0.866025, 0.5, 0, 0, 0, 1, 5.13782, -0.682725, 17.1972)
+alarm_name = "Alarm 2"
+
+[node name="Alarm3" parent="Alarms" instance=ExtResource("9_fytd6")]
+unique_name_in_owner = true
+transform = Transform3D(0.5, -0.866025, 0, 0.866025, 0.5, 0, 0, 0, 1, 5.13782, -0.682725, 8.3745)
+alarm_name = "Alarm 3"
+
+[node name="Alarm4" parent="Alarms" instance=ExtResource("9_fytd6")]
+unique_name_in_owner = true
+transform = Transform3D(0.5, 0.866025, 0, -0.866025, 0.5, 0, 0, 0, 1, -5.15243, -0.682725, 16.9854)
+alarm_name = "Alarm 4"
 
 [connection signal="interacted" from="StartButton" to="UI/Timer" method="_on_start_button_interacted"]
