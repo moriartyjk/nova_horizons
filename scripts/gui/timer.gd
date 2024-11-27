@@ -44,6 +44,7 @@ func _start_timer() -> void:
 	timer_label.show()
 	timer.start()
 	isRunning = !isRunning
+	GameManager.start_timer()
 
 # Formats UI
 func _format_seconds(time : float, use_milliseconds : bool) -> String:

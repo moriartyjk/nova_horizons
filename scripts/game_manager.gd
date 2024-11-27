@@ -116,3 +116,7 @@ func quit_game():
 	print('GameManager - Closing Window')
 	save_game_data()
 	get_tree().quit()
+
+func start_timer():
+	print("GameManager - Start timer")
+	emit_signal("timer_started")
