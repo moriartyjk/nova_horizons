@@ -5,6 +5,7 @@ extends Control
 @onready var ambient_bg: AudioStreamPlayer = $"../../AmbientBG"
 
 var time_left: float = 3600.0 #seconds
+#var time_left: float = 15.0
 var base_speed: float = 1.0 #normal multiplier
 var current_speed: float = 1.0 # current speed multiplier
 var isRunning: bool = false

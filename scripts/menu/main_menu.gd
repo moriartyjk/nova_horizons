@@ -8,3 +8,6 @@ func _on_settings_pressed() -> void:
 
 func _on_exit_pressed() -> void:
 	GameManager.quit_game()
+
+func _on_stats_pressed() -> void:
+	GameManager.show_stats()
