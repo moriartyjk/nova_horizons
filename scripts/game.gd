@@ -18,29 +18,27 @@ func _ready() -> void:
 	add_child(rng_alarm_time)
 	Input.mouse_mode = Input.MOUSE_MODE_CAPTURED
 	GameManager.connect("game_state_changed", _on_game_state_changed)
-	rng_alarm_time.timeout.connect(_on_timer_timeout)
+	#rng_alarm_time.timeout.connect(_on_timer_timeout)
 	
 func _process(delta: float) -> void:
+	pass
 	# randomly pick from the ahs_sounding_times
-
-	if rng_alarm_time.is_stopped():
-		print("Starting timer")
-		var rand_index = rng.randi_range(0,3) # 4 indices
-		
-		var countdown = AhsManager.sounding_times[rand_index]
-		print("Alarm will go off in ", countdown/60, " minutes")
-		rng_alarm_time.wait_time = countdown
-		rng_alarm_time.start()
-		
-	#if !rng_alarm_time.is_stopped():
-		#print(rng_alarm_time.time_left)
-
-func _on_timer_timeout():
-	print("countdown has stopped, alarm will start")
-	# sound the alarm
-	AhsManager.sound_alarm("Alarm 1")
-	
-	#pass
+#
+	#if rng_alarm_time.is_stopped():
+		#print("Starting timer")
+		#var rand_index = rng.randi_range(0,3) # 4 indices
+		#
+		#var countdown = AhsManager.sounding_times[rand_index]
+		#print("Alarm will go off in ", countdown/60, " minutes")
+		#rng_alarm_time.wait_time = countdown
+		#rng_alarm_time.start()
+#
+#func _on_timer_timeout():
+	#print("countdown has stopped, alarm will start")
+	## sound the alarm
+	#AhsManager.sound_alarm("Alarm 1")
+	#
+	##pass
 	
 func _on_game_state_changed(new_state):
 	match new_state:

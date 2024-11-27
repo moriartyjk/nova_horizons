@@ -1,7 +1,9 @@
 extends Node
 
 var alarm_dict = {}
-enum AlarmStatus {SILENT, SOUNDING, OFF}
+
+enum AlarmStatus {SILENT, SOUNDING} #inactive, active
+
 var sounding_count: int = 0
 
 var sounding_times = [180, 210, 240, 270, 300] # in seconds
