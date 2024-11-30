@@ -31,5 +31,7 @@ parameters/looping = true
 [node name="AlarmTimer" type="Timer" parent="."]
 one_shot = true
 
+[connection signal="disabled" from="." to="." method="_on_disabled"]
+[connection signal="enabled" from="." to="." method="_on_enabled"]
 [connection signal="interacted" from="." to="." method="_on_interacted"]
 [connection signal="timeout" from="AlarmTimer" to="." method="_on_alarm_timer_timeout"]
